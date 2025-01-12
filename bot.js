@@ -2,8 +2,13 @@ const scheduleTweets = require("./src/scheduler/tweetScheduler");
 const { CronJob } = require("cron");
 const fs = require("fs");
 const GeminiService = require("./src/services/gemini.service");
-
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const env = require("./src/config/env");
 const geminiService = new GeminiService();
+
+app.use(cors());
 
 // Generate tweets once a day at 8 AM IST
 const generateTweetsJob = new CronJob(
@@ -48,4 +53,12 @@ const scheduleTweetsJob = new CronJob(
 generateTweetsJob.start();
 scheduleTweetsJob.start();
 
-console.log("Bot is running!");
+// Add a health check endpoint
+app.get("/", (req, res) => {
+  const tweets = JSON.parse(fs.readFileSync("tweets.json", "utf-8"));
+  res.status(200).json({ message: "Bot is running!", tweets });
+});
+
+app.listen(env.PORT, () => {
+  console.log(`Bot is running!`);
+});
