@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { CronJob } = require("cron");
 const TwitterService = require("../services/twitter.service");
-const parseISTtoUTC = require("../utils/parseISTtoUTC");
+const moment = require("moment-timezone");
 
 const twitterService = new TwitterService();
 
@@ -15,18 +15,23 @@ const scheduleTweets = (filePath) => {
   }
 
   tweets.forEach((tweet) => {
-    const tweetTime = parseISTtoUTC(tweet.time);
+    // Parse IST time to UTC using moment-timezone
+    const tweetTimeUTC = moment
+      .tz(tweet.time, "YYYY-MM-DD HH:mm:ss", "Asia/Kolkata")
+      .utc();
 
-    // Construct cron expression
-    const cronExpression = `${tweetTime.getUTCSeconds()} ${tweetTime.getUTCMinutes()} ${tweetTime.getUTCHours()} ${tweetTime.getUTCDate()} ${
-      tweetTime.getUTCMonth() + 1
-    } *`;
-
-    if (tweetTime < new Date()) {
+    // Check if the parsed time is in the past
+    if (tweetTimeUTC.isBefore(moment.utc())) {
       // Skip past tweets
       return;
     }
+
     numberOfTweetsScheduled++;
+
+    // Construct cron expression
+    const cronExpression = `${tweetTimeUTC.seconds()} ${tweetTimeUTC.minutes()} ${tweetTimeUTC.hours()} ${tweetTimeUTC.date()} ${
+      tweetTimeUTC.month() + 1
+    } *`;
 
     const job = new CronJob(
       cronExpression,
@@ -49,12 +54,7 @@ const scheduleTweets = (filePath) => {
 
     job.start();
   });
-
-  if (numberOfTweetsScheduled === 0) {
-    console.log("No tweets scheduled for future.");
-  }
-
-  console.log("Tweets scheduled successfully!");
+  return numberOfTweetsScheduled;
 };
 
 module.exports = scheduleTweets;

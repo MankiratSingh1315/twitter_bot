@@ -30,8 +30,13 @@ const generateTweets = async () => {
 const scheduleTweetsNow = () => {
   try {
     // Schedule the tweets from the generated tweets.json
-    scheduleTweets("tweets.json");
-    console.log("Tweets scheduled successfully.");
+    const numberOfTweetsScheduled = scheduleTweets("tweets.json");
+
+    if (numberOfTweetsScheduled > 0) {
+      console.log("Tweets scheduled successfully!");
+    } else {
+      console.log("No tweets scheduled for future.");
+    }
   } catch (error) {
     console.error("Error occurred while scheduling tweets:", error);
   }
