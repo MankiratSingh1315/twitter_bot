@@ -10,6 +10,12 @@ const geminiService = new GeminiService();
 
 app.use(cors());
 
+console.log("Server time:", new Date().toString());
+console.log(
+  "Server time zone:",
+  Intl.DateTimeFormat().resolvedOptions().timeZone
+);
+
 // Generate tweets once a day at 8 AM IST
 const generateTweetsJob = new CronJob(
   "0 8 * * *", // Runs at 8:00 AM IST every day
@@ -22,7 +28,7 @@ const generateTweetsJob = new CronJob(
 
       // Write the parsed content to ai_generated_tweets.json
       fs.writeFileSync("tweets.json", JSON.stringify(tweets, null, 2), "utf-8");
-      console.log(`Tweets generated successfully and added in! ${filePath}`);
+      console.log(`Tweets generated successfully and added in! tweets.json`);
     } catch (error) {
       console.error("Error generating tweets:", error);
     }
@@ -52,12 +58,6 @@ const scheduleTweetsJob = new CronJob(
 // Start the jobs
 generateTweetsJob.start();
 scheduleTweetsJob.start();
-
-console.log("Server time:", new Date().toString());
-console.log(
-  "Server time zone:",
-  Intl.DateTimeFormat().resolvedOptions().timeZone
-);
 
 // Add a health check endpoint
 app.get("/", (req, res) => {
