@@ -53,6 +53,12 @@ const scheduleTweetsJob = new CronJob(
 generateTweetsJob.start();
 scheduleTweetsJob.start();
 
+console.log("Server time:", new Date().toString());
+console.log(
+  "Server time zone:",
+  Intl.DateTimeFormat().resolvedOptions().timeZone
+);
+
 // Add a health check endpoint
 app.get("/", (req, res) => {
   const tweets = JSON.parse(fs.readFileSync("tweets.json", "utf-8"));
