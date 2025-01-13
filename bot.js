@@ -7,7 +7,6 @@ const app = express();
 const cors = require("cors");
 const env = require("./src/config/env");
 const geminiService = new GeminiService();
-
 app.use(cors());
 
 // Function to generate and save tweets
