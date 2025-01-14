@@ -66,8 +66,9 @@ scheduleTweetsJob.start();
 // Run generate and schedule tweets immediately on startup
 (async () => {
   console.log("Running initial tweet generation and scheduling...");
-  await generateTweets();
-  scheduleTweetsNow();
+  // await generateTweets();
+  // scheduleTweetsNow();
+  console.log(new Date().toLocaleString());
 })();
 
 // Add a health check endpoint
