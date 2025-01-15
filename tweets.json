@@ -1,62 +1,70 @@
 [
   {
-    "content": "Debugging this React component feels like navigating a labyrinth blindfolded. Send coffee.",
-    "time": "2025-01-14 09:00:00 IST"
+    "content": "Just spent an hour wrestling with a CSS layout bug.  Turns out, it was a missing semicolon. 🤦‍♂️ The struggle is real.",
+    "time": "2025-01-15 09:35:00 I1T"
   },
   {
-    "content": "Finally got that pesky null pointer exception sorted.  Small victories feel HUGE today! 🎉",
-    "time": "2025-01-14 10:00:00 IST"
+    "content": "Nailed that API integration! 🎉 Feels good to finally see the data flowing correctly.  Time for some chai.",
+    "time": "2025-01-15 11:22:00 I1T"
   },
   {
-    "content": "Hot take:  The obsession with the latest JS framework is exhausting.  Solid fundamentals > shiny new toys.",
-    "time": "2025-01-14 10:45:00 IST"
+    "content": "Client wants a complete UI overhaul... a day before the deadline.  Send help (and coffee). ☕",
+    "time": "2025-01-15 10:05:00 I1T"
   },
   {
-    "content": "My desk is a disaster.  My code, surprisingly, is cleaner.  The irony is not lost on me.",
-    "time": "2025-01-14 11:30:00 IST"
+    "content": "Code review today highlighted some seriously elegant solutions I hadn't thought of. Learning so much from my mentor!",
+    "time": "2025-01-15 09:05:00 I1T"
   },
   {
-    "content": "Anyone else feel the imposter syndrome creeping in when you see the code some of these folks are writing?",
-    "time": "2025-01-14 12:15:00 IST"
+    "content": "Figma to React translation: my current mood is a mix of existential dread and mild caffeine-induced excitement.",
+    "time": "2025-01-15 09:27:00 I1T"
   },
   {
-    "content": "Spent the last hour trying to understand why my Python script decided to recursively call itself... infinite loops are my nemesis.",
-    "time": "2025-01-14 13:00:00 IST"
+    "content": "Managed to squash that nasty merge conflict! Git, you beautiful beast.  High five to anyone who understands the pain.",
+    "time": "2025-01-15 13:32:00 I1T"
   },
   {
-    "content": "Remote work: amazing flexibility, but also makes it hard to disconnect. Anyone else relate?",
-    "time": "2025-01-14 13:45:00 IST"
+    "content": "Database optimization is my new nemesis.  Queries running slower than a snail on a hot plate.  Help!",
+    "time": "2025-01-15 12:53:00 I1T"
   },
   {
-    "content": "Just realized my weekend coding project involves a LOT more database migrations than I anticipated.",
-    "time": "2025-01-14 14:30:00 IST"
+    "content": "Spent the morning wrestling with state management in React. Feeling like I'm speaking a new language... and it's not going well.",
+    "time": "2025-01-15 14:59:00 I1T"
   },
   {
-    "content": "Tabs vs. Spaces: The battle rages on.  My stance remains: tabs are superior. Fight me.",
-    "time": "2025-01-14 15:15:00 IST"
+    "content": "Successfully deployed the latest feature!  Small wins, but feels amazing to see it live. Time to celebrate with some Maggi.",
+    "time": "2025-01-15 13:37:00 I1T"
   },
   {
-    "content": "Shower thought:  Could we model human decision-making using a more sophisticated algorithm than just a simple IF/ELSE?",
-    "time": "2025-01-14 16:00:00 IST"
+    "content": "Balancing final year project with internship is a rollercoaster.  Some days are smooth, others... less so.",
+    "time": "2025-01-15 16:38:00 I1T"
   },
   {
-    "content": "My productivity today is inversely proportional to my caffeine intake.  Currently at peak caffeine jitters.",
-    "time": "2025-01-14 16:45:00 IST"
+    "content": "My portfolio website is finally getting some love.  Slowly but surely, building that dream tech resume.",
+    "time": "2025-01-15 16:58:00 I1T"
   },
   {
-    "content": "Tech culture needs more emphasis on mental health.  The pressure to always be 'on' is unsustainable.",
-    "time": "2025-01-14 17:30:00 IST"
+    "content": "Today's lesson: always double-check your authentication logic. Learned the hard way.  My bad!",
+    "time": "2025-01-15 15:17:00 I1T"
   },
   {
-    "content": "Recommendation:  Use a good text editor!  VS Code's extensions have saved me hours of work. #devtools",
-    "time": "2025-01-14 18:15:00 IST"
+    "content": "Thinking about future job prospects.  The job hunt is daunting, but the learning curve is exhilarating.",
+    "time": "2025-01-15 15:25:00 I1T"
   },
   {
-    "content": "Been staring at this bug for 2 hours... it was a missing semicolon 🤦‍♂️.  The struggle is real.",
-    "time": "2025-01-14 19:00:00 IST"
+    "content": "Morning stand-up meetings are a great way to start the day, even if it means waking up before the sun.  Getting my caffeine fix and updates.",
+    "time": "2025-01-15 19:24:00 I1T"
   },
   {
-    "content": "My current mood:  a perfectly brewed cup of coffee and the quiet satisfaction of finally fixing that darn bug.",
-    "time": "2025-01-14 20:30:00 IST"
+    "content": "Mobile responsiveness testing is a never-ending battle.  Each device brings new challenges, but also new learnings.",
+    "time": "2025-01-15 21:25:00 I1T"
+  },
+  {
+    "content": "Debugging a backend service issue remotely is a special kind of torture.  Can't wait till I can physically see the error.",
+    "time": "2025-01-15 22:08:00 I1T"
+  },
+  {
+    "content": "Trying to learn Next.js alongside my internship work.  It's tough, but so rewarding to pick up new skills.",
+    "time": "2025-01-15 19:27:00 I1T"
   }
 ]

@@ -6,18 +6,20 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const env = require("./src/config/env");
+const addTimestampsToTweets = require("./src/utils/addTimestampsToTweets");
 const geminiService = new GeminiService();
 app.use(cors());
 
 // Function to generate and save tweets
 const generateTweets = async () => {
   try {
-    // Clear the ai_generated_tweets.json file before writing new data
+    // Clear the tweets.json file before writing new data
     fs.writeFileSync("tweets.json", JSON.stringify([], null, 2), "utf-8");
 
-    const tweets = await geminiService.generateTweets();
+    const geminiGeneratedTweets = await geminiService.generateTweets();
+    const tweets = addTimestampsToTweets(geminiGeneratedTweets);
 
-    // Write the parsed content to ai_generated_tweets.json
+    // Write the parsed content to tweets.json
     fs.writeFileSync("tweets.json", JSON.stringify(tweets, null, 2), "utf-8");
     console.log(`Tweets generated successfully and added to tweets.json`);
   } catch (error) {

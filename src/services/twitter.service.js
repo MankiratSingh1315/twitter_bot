@@ -12,4 +12,4 @@ class TwitterService {
   }
 }
 
-module.exports = TwitterService
+module.exports = TwitterService;
