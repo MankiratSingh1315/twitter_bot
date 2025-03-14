@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const env = {
-  PORT: process.env.PORT || 5000,
   TWITTER_API_KEY: process.env.TWITTER_API_KEY,
   TWITTER_API_SECRET: process.env.TWITTER_API_SECRET,
   TWITTER_ACCESS_TOKEN: process.env.TWITTER_ACCESS_TOKEN,

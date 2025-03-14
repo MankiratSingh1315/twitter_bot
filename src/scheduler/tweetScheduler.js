@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { CronJob } = require("cron");
 const TwitterService = require("../services/twitter.service");
 const moment = require("moment-timezone");
 
@@ -14,46 +13,28 @@ const scheduleTweets = (filePath) => {
     return;
   }
 
-  tweets.forEach((tweet) => {
-    // Parse IST time to UTC using moment-timezone
+  tweets.forEach(async (tweet) => {
     const tweetTimeUTC = moment
       .tz(tweet.time, "YYYY-MM-DD HH:mm:ss", "Asia/Kolkata")
       .utc();
 
-    // Check if the parsed time is in the past
     if (tweetTimeUTC.isBefore(moment.utc())) {
-      // Skip past tweets
+      // console.log(`Skipping tweet ${tweet.content} as it's in the past.`);
       return;
     }
 
     numberOfTweetsScheduled++;
 
-    // Construct cron expression
-    const cronExpression = `${tweetTimeUTC.seconds()} ${tweetTimeUTC.minutes()} ${tweetTimeUTC.hours()} ${tweetTimeUTC.date()} ${
-      tweetTimeUTC.month() + 1
-    } *`;
-
-    const job = new CronJob(
-      cronExpression,
-      async () => {
-        try {
-          const { data: createdTweet } = await twitterService.postTweet(
-            tweet.content
-          );
-          console.log(
-            `Tweet posted: ${createdTweet.id} - ${createdTweet.text}`
-          );
-        } catch (error) {
-          console.error("Error posting tweet:", error);
-        }
-      },
-      null,
-      true,
-      "UTC"
-    );
-
-    job.start();
+    try {
+      const { data: createdTweet } = await twitterService.postTweet(
+        tweet.content
+      );
+      console.log(`Tweet posted: ${createdTweet.id} - ${createdTweet.text}`);
+    } catch (error) {
+      console.error("Error posting tweet:", error);
+    }
   });
+
   return numberOfTweetsScheduled;
 };
 
