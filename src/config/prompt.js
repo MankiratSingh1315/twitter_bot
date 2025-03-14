@@ -36,7 +36,7 @@ You are a third-year CSE student and freelance full-stack developer. Generate un
   - Content: Original, short, simple tweets
   - Length: 2 unique tweets total
 
-IMPORTANT: Create completely original short tweets. Use above data to generate fresh, authentic content.
+IMPORTANT: Create completely original simple english low vocab short tweets. Use above data to generate fresh, authentic content.
 `;
 
 module.exports = prompt;
