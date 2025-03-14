@@ -11,7 +11,7 @@ const generateTweets = async () => {
     fs.writeFileSync("tweets.json", JSON.stringify([], null, 2), "utf-8");
     const geminiGeneratedTweets = await geminiService.generateTweets();
     const tweets = addTimestampsToTweets(geminiGeneratedTweets);
-    console.log("tweets", tweets);
+    // console.log("tweets", tweets);
     fs.writeFileSync("tweets.json", JSON.stringify(tweets, null, 2), "utf-8");
     console.log("Tweets generated successfully and added to tweets.json");
   } catch (error) {
@@ -24,5 +24,5 @@ const generateTweets = async () => {
   await generateTweets();
   // scheduleTweetsNow();
   const tweets = JSON.parse(fs.readFileSync("tweets.json", "utf-8"));
-  console.log("Generated Tweets:\n", tweets);
+  // console.log("Generated Tweets:\n", tweets);
 })();

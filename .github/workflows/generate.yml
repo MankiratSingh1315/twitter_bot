@@ -34,6 +34,7 @@ jobs:
             echo "TWITTER_ACCESS_TOKEN=$TWITTER_ACCESS_TOKEN" >> .env
             echo "TWITTER_ACCESS_SECRET=$TWITTER_ACCESS_SECRET" >> .env
             echo "GEMINI_API_KEY=$GEMINI_API_KEY" >> .env
+            ls -la
             node bot.js
 
       - name: Upload tweets artifact
