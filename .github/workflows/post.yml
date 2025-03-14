@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Download previous tweets artifact
-        uses: actions/download-artifact@v4.6.1
+        uses: actions/download-artifact@v4.1.9
         with:
           name: tweets-artifact
           path: .
